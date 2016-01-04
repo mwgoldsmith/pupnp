@@ -73,52 +73,48 @@ GRTAGS
 GSYMS
 GTAGS
 
-# QT-Creator files
-Makefile.am.user
-pupnp.config
-pupnp.creator
-pupnp.creator.user
-pupnp.files
-pupnp.includes
-
 *.orig
 *~
 \#*#
 *.lo
 *.la
-Makefile
-Makefile.in
-aclocal.m4
-autoconfig.h
-autoconfig.h.in
-autom4te.cache/
-build-aux/
-config.log
-config.status
-configure
-libtool
-libupnp.pc
-m4/libtool.m4
-m4/ltoptions.m4
-m4/ltsugar.m4
-m4/ltversion.m4
-m4/lt~obsolete.m4
-stamp-h1
-upnp/inc/stamp-h2
-upnp/inc/upnpconfig.h
-upnp/sample/tv_combo
-upnp/sample/tv_ctrlpt
-upnp/sample/tv_device
-upnp/unittest/unittest
-upnp/unittest/*.pp.c
-docs/doxygen
 
+# Tempory Files
+*.log
+*File.txt
 
-/build/vc10/out.vc9.Win32/Debug
-/build/vc10/out.vc10.Win32
-/build/vc10/out.vc10.x64
-/pthreads
-/build/vc10/ipch
-/build/vc10/IUpnpErrFile.txt
-/build/vc10/IUpnpInfoFile.txt
-/build/vc10/*.opensdf
+# old cvs files
+*.cvsignore
+
+# visual studio noise
+*.user
+*.sdf
+*ipch/
+*.userprefs
+*.opensdf
+*.sdf
+*.v11.suo
+*.suo
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+*.sbr
+*.opendb
+.vs/
+
+# targets
+#build/
+lib/
+obj/
+[Bb]in
+[Dd]ebug*/
+
+[Rr]elease*/
+_ReSharper*/
