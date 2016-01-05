@@ -44,7 +44,7 @@
 		#include <lwres/netdb.h>
 	#endif
 #endif
-#ifdef WIN32
+#if defined(WIN32) && defined(_MSC_VER) && _MSC_VER < 1900
 	#define snprintf _snprintf
 #endif
 #include <assert.h>

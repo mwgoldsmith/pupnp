@@ -57,8 +57,10 @@
 #include <stdio.h>
 
 #ifdef WIN32
-#include <string.h>
-#define snprintf _snprintf
+#  include <string.h>
+#  if defined(_MSC_VER) && _MSC_VER < 1900
+#    define snprintf _snprintf
+#  endif
 #endif /* WIN32 */
 
 /*!

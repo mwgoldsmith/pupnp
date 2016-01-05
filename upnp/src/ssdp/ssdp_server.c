@@ -38,11 +38,13 @@
  * \file
  */
 
-#ifndef WIN32
-	#include <sys/param.h>
+#if defined(WIN32) && defined(_MSC_VER) && _MSC_VER < 1900
+#define snprintf _snprintf
 #else
-	#define snprintf _snprintf
+#if !defined(WIN32)
+#include <sys/param.h>
 #endif /* WIN32 */
+#endif 
 
 #include "config.h"
 

@@ -59,7 +59,9 @@
 #ifdef WIN32
 	#include <malloc.h>
 	#define fseeko fseek
-	#define snprintf _snprintf
+  #if defined(_MSC_VER) && _MSC_VER < 1900
+	  #define snprintf _snprintf
+  #endif
 #else
 	#include <arpa/inet.h>
 	#include <sys/types.h>
@@ -1990,8 +1992,7 @@ void get_sdk_info(OUT char *info, IN size_t infoSize)
 
 	if (GetVersionEx(&versioninfo) != 0)
 		snprintf(info, infoSize,
-			"%d.%d.%d %d/%s, UPnP/1.0, Portable SDK for UPnP devices/"
-			PACKAGE_VERSION "\r\n", versioninfo.dwMajorVersion,
+			"%d.%d.%d %d/%s, UPnP/1.0, Portable SDK for UPnP devices/" PACKAGE_VERSION "\r\n", versioninfo.dwMajorVersion,
 			versioninfo.dwMinorVersion, versioninfo.dwBuildNumber,
 			versioninfo.dwPlatformId, versioninfo.szCSDVersion);
 	else

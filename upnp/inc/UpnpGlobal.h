@@ -40,9 +40,12 @@
 	 */
 	#ifdef UPNP_USE_MSVCPP
 		/* define some things the M$ VC++ doesn't know */
-		#define UPNP_INLINE _inline
+    #define UPNP_INLINE _inline
+    #define strdup _strdup
 		typedef __int64 int64_t;
-		#define PRId64 "I64d"
+    #if defined(_MSC_VER) && _MSC_VER < 1900
+	  	#define PRId64 "I64d"
+    #endif
 		#define PRIzd "ld"
 		#define PRIzu "lu"
 		#define PRIzx "lx"
