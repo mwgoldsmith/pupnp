@@ -103,7 +103,7 @@ typedef struct LINKEDLIST
  *	\li \c 0 on success.
  *	\li \c EOUTOFMEM on failure.
  */
-int ListInit(
+int EXPORT_SPEC ListInit(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Function used to compare items. (May be NULL). */
@@ -120,7 +120,7 @@ int ListInit(
  *
  * \return The pointer to the ListNode on success, NULL on failure.
  */
-ListNode *ListAddHead(
+ListNode EXPORT_SPEC *ListAddHead(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Item to be added. */
@@ -134,7 +134,7 @@ ListNode *ListAddHead(
  *
  * \return The pointer to the ListNode on success, NULL on failure.
  */
-ListNode *ListAddTail(
+ListNode EXPORT_SPEC *ListAddTail(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Item to be added. */
@@ -148,7 +148,7 @@ ListNode *ListAddTail(
  *
  * \return The pointer to the ListNode on success, NULL on failure.
  */
-ListNode *ListAddAfter(
+ListNode EXPORT_SPEC *ListAddAfter(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Item to be added. */
@@ -164,7 +164,7 @@ ListNode *ListAddAfter(
  *
  * \return The pointer to the ListNode on success, NULL on failure.
  */
-ListNode *ListAddBefore(
+ListNode EXPORT_SPEC *ListAddBefore(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Item to be added. */
@@ -180,7 +180,7 @@ ListNode *ListAddBefore(
  * \return The pointer to the item stored in the node or NULL if the item
  * is freed.
  */
-void *ListDelNode(
+void EXPORT_SPEC *ListDelNode(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Node to delete. */
@@ -197,7 +197,7 @@ void *ListDelNode(
  *
  * \return 0 on success, EINVAL on failure.
  */
-int ListDestroy(
+int EXPORT_SPEC ListDestroy(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! if !0 then item is freed using free function. If 0 (or free
@@ -211,7 +211,7 @@ int ListDestroy(
  *
  * \return The head of the list. NULL if list is empty.
  */
-ListNode *ListHead(
+ListNode EXPORT_SPEC *ListHead(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list);
 
@@ -222,7 +222,7 @@ ListNode *ListHead(
  *
  * \return The tail of the list. NULL if list is empty.
  */
-ListNode *ListTail(
+ListNode EXPORT_SPEC *ListTail(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list);
 
@@ -233,7 +233,7 @@ ListNode *ListTail(
  *
  * \return The next item in the list. NULL if there are no more items in list.
  */
-ListNode *ListNext(
+ListNode EXPORT_SPEC *ListNext(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Node from the list. */
@@ -246,7 +246,7 @@ ListNode *ListNext(
  *
  * \return The previous item in the list. NULL if there are no more items in list.
  */
-ListNode *ListPrev(
+ListNode EXPORT_SPEC *ListPrev(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! Node from the list. */
@@ -262,7 +262,7 @@ ListNode *ListPrev(
  *
  * \return The node containing the item. NULL if no node contains the item.
  */
-ListNode* ListFind(
+ListNode EXPORT_SPEC * ListFind(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList *list,
 	/*! The node to start from, NULL if to start from beginning. */
@@ -277,7 +277,7 @@ ListNode* ListFind(
  *
  * \return The number of items in the list.
  */
-long ListSize(
+long EXPORT_SPEC ListSize(
 	/*! Must be valid, non null, pointer to a linked list. */
 	LinkedList* list);
 

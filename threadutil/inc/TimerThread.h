@@ -96,7 +96,7 @@ typedef struct TIMEREVENT
  * \return 0 on success, nonzero on failure. Returns error from
  * 	ThreadPoolAddPersistent on failure.
  */
-int TimerThreadInit(
+int EXPORT_SPEC TimerThreadInit(
 	/*! [in] Valid timer thread pointer. */
 	TimerThread *timer,
 	/*! [in] Valid thread pool to use. Must be started. Must be valid for
@@ -109,7 +109,7 @@ int TimerThreadInit(
  * \return 0 on success, nonzero on failure, EOUTOFMEM if not enough memory
  * 	to schedule job.
  */
-int TimerThreadSchedule(
+int EXPORT_SPEC TimerThreadSchedule(
 	/*! [in] Valid timer thread pointer. */
 	TimerThread* timer,
 	/*! [in] time of event. Either in absolute seconds, or relative
@@ -132,7 +132,7 @@ int TimerThreadSchedule(
  *
  * \return 0 on success, INVALID_EVENT_ID on failure.
  */
-int TimerThreadRemove(
+int EXPORT_SPEC TimerThreadRemove(
 	/*! [in] Valid timer thread pointer. */
 	TimerThread *timer,
 	/*! [in] Id of event to remove. */
@@ -149,7 +149,7 @@ int TimerThreadRemove(
  *
  * \return 0 if succesfull, nonzero otherwise. Always returns 0.
  */
-int TimerThreadShutdown(
+int EXPORT_SPEC TimerThreadShutdown(
 	/*! [in] Valid timer thread pointer. */
 	TimerThread *timer);
 

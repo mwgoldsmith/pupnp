@@ -255,7 +255,7 @@ typedef struct THREADPOOL
  * \li \c INVALID_POLICY if schedPolicy can't be set.
  * \li \c EMAXTHREADS if minimum threads is greater than maximum threads.
  */
-int ThreadPoolInit(
+int EXPORT_SPEC ThreadPoolInit(
 	/*! Must be valid, non null, pointer to ThreadPool. */
 	ThreadPool *tp,
 	/*! Can be null. if not null then attr contains the following fields:
@@ -285,7 +285,7 @@ int ThreadPoolInit(
  *	\li \c EOUTOFMEM not enough memory to add job.
  *	\li \c EMAXTHREADS not enough threads to add persistent job.
  */
-int ThreadPoolAddPersistent(
+int EXPORT_SPEC ThreadPoolAddPersistent(
 	/*! Valid thread pool pointer. */
 	ThreadPool*tp,
 	/*! Valid thread pool job. */
@@ -299,7 +299,7 @@ int ThreadPoolAddPersistent(
  * \return
  * 	\li \c 0 on success, nonzero on failure.
  */
-int ThreadPoolGetAttr(
+int EXPORT_SPEC ThreadPoolGetAttr(
 	/*! valid thread pool pointer. */
 	ThreadPool *tp,
 	/*! non null pointer to store attributes. */
@@ -313,7 +313,7 @@ int ThreadPoolGetAttr(
  * 	\li \c 0 on success, nonzero on failure.
  * 	\li \c INVALID_POLICY if policy can not be set.
  */
-int ThreadPoolSetAttr(
+int EXPORT_SPEC ThreadPoolSetAttr(
 	/*! valid thread pool pointer. */
 	ThreadPool *tp,
 	/*! pointer to attributes, null sets attributes to default. */
@@ -326,7 +326,7 @@ int ThreadPoolSetAttr(
  * 	\li \c 0 on success, nonzero on failure.
  * 	\li \c EOUTOFMEM if not enough memory to add job.
  */
-int ThreadPoolAdd(
+int EXPORT_SPEC ThreadPoolAdd(
 	/*! valid thread pool pointer. */
 	ThreadPool*tp,
 	/*! . */
@@ -342,7 +342,7 @@ int ThreadPoolAdd(
  * 	\li \c 0 on success, nonzero on failure.
  * 	\li \c INVALID_JOB_ID if job not found. 
  */
-int ThreadPoolRemove(
+int EXPORT_SPEC ThreadPoolRemove(
 	/*! valid thread pool pointer. */
 	ThreadPool *tp,
 	/*! id of job. */
@@ -356,7 +356,7 @@ int ThreadPoolRemove(
  *
  * \return 0 on success, nonzero on failure
  */
-int ThreadPoolShutdown(
+int EXPORT_SPEC ThreadPoolShutdown(
 	/*! must be valid tp. */
 	ThreadPool *tp);
 
@@ -366,7 +366,7 @@ int ThreadPoolShutdown(
  *
  * \return Always returns 0.
  */
-int TPJobInit(
+int EXPORT_SPEC TPJobInit(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolJob *job,
 	/*! function to run, must be valid. */
@@ -377,9 +377,9 @@ int TPJobInit(
 /*!
  * \brief Sets the max threads for the thread pool attributes.
  *
- * \return Always returns 0.
+ * \return Always rfThreadPoolGetStatseturns 0.
  */
-int TPJobSetPriority(
+int EXPORT_SPEC TPJobSetPriority(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolJob *job,
 	/*! value to set. */
@@ -390,7 +390,7 @@ int TPJobSetPriority(
  *
  * \return Always returns 0.
  */
-int TPJobSetFreeFunction(
+int EXPORT_SPEC TPJobSetFreeFunction(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolJob *job,
 	/*! value to set. */
@@ -402,7 +402,7 @@ int TPJobSetFreeFunction(
  *
  * \return Always returns 0.
  */
-int TPAttrInit(
+int EXPORT_SPEC TPAttrInit(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr);
 
@@ -411,7 +411,7 @@ int TPAttrInit(
  *
  * \return Always returns 0.
  */
-int TPAttrSetMaxThreads(
+int EXPORT_SPEC TPAttrSetMaxThreads(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! value to set. */
@@ -422,7 +422,7 @@ int TPAttrSetMaxThreads(
  *
  * \return Always returns 0.
  */
-int TPAttrSetMinThreads(
+int EXPORT_SPEC TPAttrSetMinThreads(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! value to set. */
@@ -433,7 +433,7 @@ int TPAttrSetMinThreads(
  *
  * \return Always returns 0.
  */
-int TPAttrSetStackSize(
+int EXPORT_SPEC TPAttrSetStackSize(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! value to set. */
@@ -444,7 +444,7 @@ int TPAttrSetStackSize(
  *
  * \return Always returns 0.
  */
-int TPAttrSetIdleTime(
+int EXPORT_SPEC TPAttrSetIdleTime(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! . */
@@ -455,7 +455,7 @@ int TPAttrSetIdleTime(
  *
  * \return Always returns 0.
  */
-int TPAttrSetJobsPerThread(
+int EXPORT_SPEC TPAttrSetJobsPerThread(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! number of jobs per thread to maintain. */
@@ -466,7 +466,7 @@ int TPAttrSetJobsPerThread(
  *
  * \return Always returns 0.
  */
-int TPAttrSetStarvationTime(
+int EXPORT_SPEC TPAttrSetStarvationTime(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! milliseconds. */
@@ -477,7 +477,7 @@ int TPAttrSetStarvationTime(
  *
  * \return Always returns 0.
  */
-int TPAttrSetSchedPolicy(
+int EXPORT_SPEC TPAttrSetSchedPolicy(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! must be a valid policy type. */
@@ -488,7 +488,7 @@ int TPAttrSetSchedPolicy(
  *
  * \return Always returns 0.
  */
-int TPAttrSetMaxJobsTotal(
+int EXPORT_SPEC TPAttrSetMaxJobsTotal(
 	/*! must be valid thread pool attributes. */
 	ThreadPoolAttr *attr,
 	/*! maximum number of jobs. */

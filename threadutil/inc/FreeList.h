@@ -75,7 +75,7 @@ typedef struct FREELIST
  *	\li \c 0 on success.
  *	\li \c EINVAL on failure.
  */
-int FreeListInit(
+int EXPORT_SPEC FreeListInit(
 	/*! Must be valid, non null, pointer to a linked list. */
 	FreeList *free_list,
 	/*! Size of elements to store in free list. */
@@ -92,7 +92,7 @@ int FreeListInit(
  *
  * \return Non NULL on success. NULL on failure.
  */
-void *FreeListAlloc(
+void EXPORT_SPEC *FreeListAlloc(
 	/*! Must be valid, non null, pointer to a linked list. */
 	FreeList *free_list);
 
@@ -106,7 +106,7 @@ void *FreeListAlloc(
  *	\li \c 0 on success.
  *	\li \c EINVAL on failure.
  */
-int FreeListFree(
+int EXPORT_SPEC FreeListFree(
 	/*! Must be valid, non null, pointer to a free list. */
 	FreeList *free_list,
 	/*! Must be a pointer allocated by FreeListAlloc. */
@@ -119,7 +119,7 @@ int FreeListFree(
  *	\li \c 0 on success.
  *	\li \c EINVAL on failure.
  */
-int FreeListDestroy(
+int EXPORT_SPEC FreeListDestroy(
 	/*! Must be valid, non null, pointer to a linked list. */
 	FreeList *free_list);
 
