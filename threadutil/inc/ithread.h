@@ -48,6 +48,7 @@
 extern "C" {
 #endif
 
+#define HAVE_STRUCT_TIMESPEC 1
 #include <pthread.h>
 
 #if defined(BSD) && !defined(__GNU__)
