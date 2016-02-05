@@ -118,3 +118,7 @@ obj/
 
 [Rr]elease*/
 _ReSharper*/
+
+.vs/
+*.sdf
+*.opendb
